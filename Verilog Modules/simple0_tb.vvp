@@ -1,0 +1,174 @@
+#! c:/iverilog/bin/vvp
+:ivl_version "0.10.0 (devel)" "(s20130827)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0075B3E8 .scope module, "simple0_tb" "simple0_tb" 2 1;
+ .timescale 0 0;
+v00751398_0 .var "A", 3 0;
+v007513F0_0 .net "B", 3 0, L_00642D18;  1 drivers
+v00751448_0 .var "C", 0 0;
+v0075A818_0 .net "D", 0 0, L_00642D70;  1 drivers
+S_00754710 .scope module, "s" "simple0" 2 45, 3 1 0, S_0075B3E8;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "A"
+    .port_info 1 /OUTPUT 4 "B"
+    .port_info 2 /INPUT 1 "C"
+    .port_info 3 /OUTPUT 1 "D"
+v0075A720_0 .net "A", 3 0, v00751398_0;  1 drivers
+v007547E0_0 .net "B", 3 0, L_00642D18;  alias, 1 drivers
+v00754838_0 .net "C", 0 0, v00751448_0;  1 drivers
+v0075DCF0_0 .net "D", 0 0, L_00642D70;  alias, 1 drivers
+v0075DD48_0 .net *"_s1", 0 0, L_0075A870;  1 drivers
+v0075DDA0_0 .net *"_s3", 0 0, L_00642C10;  1 drivers
+v007512E8_0 .net *"_s5", 0 0, L_00642C68;  1 drivers
+v00751340_0 .net *"_s7", 0 0, L_00642CC0;  1 drivers
+L_0075A870 .part v00751398_0, 0, 1;
+L_00642C10 .part v00751398_0, 2, 1;
+L_00642C68 .part v00751398_0, 1, 1;
+L_00642CC0 .part v00751398_0, 3, 1;
+L_00642D18 .concat [ 1 1 1 1], L_00642CC0, L_00642C68, L_00642C10, L_0075A870;
+L_00642D70 .concat [ 1 0 0 0], v00751448_0;
+    .scope S_0075B3E8;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "simple0_tb.dump" {0 0};
+    %vpi_call 2 9 "$dumpvars" {0 0};
+    %delay 10, 0;
+    %set/v v00751398_0, 0, 4;
+    %set/v v00751448_0, 0, 1;
+    %delay 10, 0;
+    %movi 8, 1, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 2, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 3, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 4, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 5, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 6, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 7, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 8, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 9, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 10, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 11, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 12, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 13, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 14, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 15, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 16, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 17, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 18, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 19, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 20, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 21, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 22, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 23, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 24, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 25, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 26, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 27, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 28, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 29, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %movi 8, 30, 5;
+    %set/v v00751398_0, 8, 4;
+    %set/v v00751448_0, 12, 1;
+    %delay 10, 0;
+    %set/v v00751398_0, 1, 4;
+    %set/v v00751448_0, 1, 1;
+    %delay 10, 0;
+    %vpi_call 2 42 "$finish" {0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "simple0_tb.v";
+    "simple0.v";

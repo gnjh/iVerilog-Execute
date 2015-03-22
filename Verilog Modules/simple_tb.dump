@@ -1,0 +1,76 @@
+$date
+	Tue Mar 17 11:30:22 2015
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module simple_tb $end
+$var wire 4 ! B [3:0] $end
+$var reg 4 " A [3:0] $end
+$scope module s $end
+$var wire 4 # A [3:0] $end
+$var wire 4 $ B [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx $
+bx #
+bx "
+bx !
+$end
+#10
+b1001 !
+b1001 $
+b1001 "
+b1001 #
+#20
+b1 !
+b1 $
+b1000 "
+b1000 #
+#30
+b1110 !
+b1110 $
+b111 "
+b111 #
+#40
+b110 !
+b110 $
+b110 "
+b110 #
+#50
+b1100 !
+b1100 $
+b101 "
+b101 #
+#60
+b100 !
+b100 $
+b100 "
+b100 #
+#70
+b1010 !
+b1010 $
+b11 "
+b11 #
+#80
+b10 !
+b10 $
+b10 "
+b10 #
+#90
+b1000 !
+b1000 $
+b1 "
+b1 #
+#100
+b0 !
+b0 $
+b0 "
+b0 #
+#110
