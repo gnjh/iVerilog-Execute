@@ -28,19 +28,36 @@ if sys.platform.startswith('linux'):
     for root, dirs, files in os.walk('/home/'):
         for file in files:
             if file.endswith('.v') and not file.endswith('tb.v'):
-                filesFound = file
-                print(str(i) + '.' , filesFound)
+                filesFound.append(file)
+                print(str(i) + '.' , file)
                 i += 1
     print("\n")
-    verilogFile    = input("Please enter the name of the verilog file: ")
-    verilogTB      = verilogFile.strip() + "_tb"
 
-    executionCommandStr = "iverilog " + verilogFile.strip() + ".v " + verilogTB.strip() + ".v -o " +  verilogTB.strip() + ".vvp"
-    generateWaveStr = "\nvvp " + verilogTB.strip() + ".vvp"
-    openWaveStr = "\ngtkwave " + verilogTB.strip() + ".dump"
-    command = executionCommandStr + generateWaveStr + openWaveStr;
-    p = os.system('echo %s|sudo -S %s' % ('',command))
-    print(p)
+    # Assumption: User will always key in integer value
+    # Prompt user for input
+    inputValue = int(input("Please select a file: "))
+
+    # Check if the input value is within the found file range
+    while (inputValue > i-1 or inputValue <= 0):
+        
+        # Print out warning message
+        print("Warning: Please select the file again!")
+        
+        # Prompt user to re-input again
+        inputValue = int(input("Please select a file: "))
+        
+    else:
+        # open and read the contents of a verilog file
+        verilogFilename = filesFound[inputValue-1][:-2]
+        verilogTB = verilogFilename.strip() + "_tb"
+
+        # Creating iVerilog Command to lanuch the GTKWAVE
+        executionCommandStr = "iverilog " + verilogFilename.strip() + ".v " + verilogTB.strip() + ".v -o " +  verilogTB.strip() + ".vvp"
+        generateWaveStr = "\nvvp " + verilogTB.strip() + ".vvp"
+        openWaveStr = "\ngtkwave " + verilogTB.strip() + ".dump"
+        command = executionCommandStr + generateWaveStr + openWaveStr;
+        p = os.system('echo %s|sudo -S %s' % ('',command))
+        print(p)
     
 # For Windows Platform - Run using .bat file    
 if sys.platform.startswith('win'):
@@ -60,7 +77,7 @@ if sys.platform.startswith('win'):
     print("\n")
 
     # Assumption: User will always key in integer value
-        # Prompt user for input
+    # Prompt user for input
     inputValue = int(input("Please select a file: "))
 
     # Check if the input value is within the found file range
@@ -75,7 +92,7 @@ if sys.platform.startswith('win'):
     else:
         # open and read the contents of a verilog file
         verilogFilename = filesFound[inputValue-1][:-2]
-        verilogTB      = verilogFilename.strip() + "_tb"
+        verilogTB = verilogFilename.strip() + "_tb"
         
         # Creating iVerilog Command to generate batchfile to be executed
         echoOffStr = "echo off\ncls\n"
